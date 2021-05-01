@@ -1,12 +1,15 @@
 language: python
 python:
-    - "3.8.5"
+- 3.8.5
+env:
+  global:
+    secure: hD5tsE5+cltYO2HHtK5iVIP+WPxBGnrb8wimvD2sZnMddY2XMveMgnxnQb48XSO7TCFBHMNcR7AD0HPPcd4y6Akp9KQ4F835KuN5dxrk/ld1xgRxya7oCr/aB1VfG/0E4SeJ2az68OhumnHQlQlqTBzmeF3XAbPS7uMX0zY3mg1aTsl8zRt0Eav1wBd6kw10/eK/Ee+Q2M2yDTgXGMwMJoJAVf5ls7PzGYYPVFE5dAmKcQmIpxf/qdhcMi8sc+z6pt5m4b6bWm9rf98Uo2UEzkf+ZhdzYGQg1jn2qY66C5PGcyZPaBnPQeY94B5aLhXiNXgNqfBjiGW8QxcCY/KgLiRzHOMSyVvpiyq8NdsYZDVr1fP/WJvJklOwOkgUenEaqnzV3asQCwnGkHUddMW8avsgRiVMHZa5Dpdtb0K73ips8a++X1rpjcC23osbQ8EcMpWytapYriCYb59kQO/K1KT6nC9JAgVa0mfTYE9BRtzj76dxuqncp9Ous3hyrqEjl+ICbSX+iuFPTc3U9Ur3TgRyom4uD1fg5ma1siZ+cKh3gWRqnsovE5H3R9QZoLF0md/GPep3eEDJ0oDCXuoDCoe1bW1QkpzdyrZO6auVZ7pXxCe0qL3DKkPidQkJ+aU/qOA5UPImdBmGdXPXPrWstIt82xBl2iCzWUjF7BDRC9U=
 services:
-    - postgresql
+- postgresql
 install:
-    - pip install -r requirements.txt
+- pip install -r requirements.txt
 script:
-    - python manage.py test
+- python manage.py test
 deploy:
   provider: heroku
   api_key:
