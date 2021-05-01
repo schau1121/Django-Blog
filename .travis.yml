@@ -1,8 +1,16 @@
 language: python
 python:
     - "3.8.5"
+services:
+    - postgresql
+install:
+    - pip install -r requirements.txt
+script:
+    - python mange.py test
 deploy:
   provider: heroku
   api_key:
     secure: Ja7BhIDMiLbOdBF/K59FA+YjHU9BrAEjDvGcDL8M5vOpuKxGXnu8TYjfHXcpCc2MkZcmmqU3dy7LcukuBNtNvnOF++gmi3PpYvICawkkkXTTJ98S5vpxOeDSONXiUSQcwqx66OpBQUAXNcK/lgePTCQoGavTrnrApgS/Xq9TJkL0FgXbR2lpVaOqZ1EIqE0kR/5F2G6PMWZhLR2yaNkjeXlq5dKhp1Ursy2QZ6veX2HsGg9yKp4Fy1MLEn00dStCfi3cm9mCZt97RP9Cu+pObjNxPYsjYKzPL/WzSUUfMHrglpVtYI2TljohvsrGjqb40rAdx5BmEG4voAUdhr7j+zVE8oe35mCzNSUnMHV0BwyjNBqH8+Jtt8jOJfZDCfixZlelmedHFEEzYK9E5nr2RZmQUfjkXbzQgb63FpPPELpmFjnAOBzwOIbkUF8YD7QYADgNhrDFZzhhOlgyPf2vCMTUVU4LXQjL9WJA+EzA4vB2YLy0Yb0ie3I+7PnOUpspR9IrxupIjyGYmAPbGSOl1ldVWE608+CC3E7f1Abjl31y2hx9p8Zpz5S8LPoiRADGRYCNTOXN8Ywjpxc4+bDmMhKZ2lWk0WsPXhpHlIZtl1E+rn6pllUez7DnkJ6kx1zWCA5RhdaqFR4HmCJE9ruk521L5kWNGEODE2w+rnTv7SU=
   app: schau1121-django-blog
+  run: python manage.py migrate
+  on: master
