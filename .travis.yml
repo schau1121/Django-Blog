@@ -6,7 +6,7 @@ services:
 install:
     - pip install -r requirements.txt
 script:
-    - python mange.py test
+    - python manage.py test
 deploy:
   provider: heroku
   api_key:
