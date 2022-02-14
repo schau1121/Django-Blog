@@ -3,6 +3,8 @@
 
 In this web application, registered and authenticated users can create, update, and delete posts, as well as edit their profile information
 
+Currently, images are not loading because I needed to cancel the AWS S3 hosting due to financial reasons.
+
 Tools and Technologies utilized:
 - Django
 - Bootstrap4
